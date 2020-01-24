@@ -1,3 +1,9 @@
+#
+# output UUID and Handle and properties
+#
+# Usages> python3 getHandle.py xx:xx:xx:xx:xx:xx
+#
+
 import sys
 import bluepy
 
@@ -15,8 +21,6 @@ def main() :
     print("------------------------------------------")
     print(" UUID : %s" % chara.uuid )
     print(" Handle %04X : %s" %(chara.getHandle(), chara.propertiesToString()))
-    #print(" name : %s" % chara.name )
-    #print(" type : %s" % chara.type )
 
   peri.disconnect()
 

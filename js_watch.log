@@ -1,0 +1,12 @@
+up    : num=13, type=1, val=1 or 0
+down  : num=14, type=1, val=1 or 0
+left  : num=15, type=1, val=1 or 0
+right : num=16, type=1, val=1 or 0
+
+left stick
+left&right : num=0 , type=2, val=-32000:32000
+up&down    : num=1 , type=2, val=-32000:32000
+
+right stick
+left&right : num=3 , type=2, val=-32000:32000
+up&down    : num=4 , type=2, val=-32000:32000

@@ -14,117 +14,117 @@
 DFU Service
  UUID : e95d93b0-251d-470a-a062-fa1922dfa9a8
 ------------------------------------------
+ DFU Control
  UUID : e95d93b1-251d-470a-a062-fa1922dfa9a8
  Handle 000E : READ WRITE 
- DFU Control
 ------------------------------------------
 Unknown Service
  UUID : e97dd91d-251d-470a-a062-fa1922dfa9a8
 ------------------------------------------
+ Unknown Characteristic
  UUID : e97d3b10-251d-470a-a062-fa1922dfa9a8
  Handle 0011 : WRITE NO RESPONSE NOTIFY 
- Unknown Characteristic
 ------------------------------------------
+ Model Number String
  UUID : 00002a24-0000-1000-8000-00805f9b34fb
  Handle 0015 : READ 
- Model Number String
 ------------------------------------------
+ Serial Number string
  UUID : 00002a25-0000-1000-8000-00805f9b34fb
  Handle 0017 : READ 
- Serial Number string
 ------------------------------------------
+ Firmware Revision String
  UUID : 00002a26-0000-1000-8000-00805f9b34fb
  Handle 0019 : READ 
- Firmware Revision String
 ------------------------------------------
 micro:bit Event Service
  UUID : e95d93af-251d-470a-a062-fa1922dfa9a8
 ------------------------------------------
+ micro:bit Event
  UUID : e95d9775-251d-470a-a062-fa1922dfa9a8
  Handle 001C : READ NOTIFY 
- micro:bit Event
 ------------------------------------------
+ micro:bit Client Event
  UUID : e95d5404-251d-470a-a062-fa1922dfa9a8
  Handle 001F : WRITE NO RESPONSE WRITE 
- micro:bit Client Event
 ------------------------------------------
+ micro:bit Client Requirements
  UUID : e95d23c4-251d-470a-a062-fa1922dfa9a8
  Handle 0021 : WRITE 
- micro:bit Client Requirements
 ------------------------------------------
+ micro:bit Requirements
  UUID : e95db84c-251d-470a-a062-fa1922dfa9a8
  Handle 0023 : READ NOTIFY 
- micro:bit Requirements
 ------------------------------------------
+ Accelerometer Data
  UUID : e95dca4b-251d-470a-a062-fa1922dfa9a8
  Handle 0027 : READ NOTIFY 
- Accelerometer Data
 ------------------------------------------
+ Accererometer Period
  UUID : e95dfb24-251d-470a-a062-fa1922dfa9a8
  Handle 002A : READ WRITE 
- Accererometer Period
 ------------------------------------------
  UUID : e95d9250-251d-470a-a062-fa1922dfa9a8
  Handle 002D : READ NOTIFY 
  Temperature
 ------------------------------------------
+ Temperature Period
  UUID : e95d1b25-251d-470a-a062-fa1922dfa9a8
  Handle 0030 : READ WRITE 
- Temperature Period
 ------------------------------------------
 LED Service
  UUID : e95dd91d-251d-470a-a062-fa1922dfa9a8
 ------------------------------------------
+ LED Matrix State
  UUID : e95d7b77-251d-470a-a062-fa1922dfa9a8
  Handle 0033 : READ WRITE 
- LED Matrix State
 ------------------------------------------
+ LED Text
  UUID : e95d93ee-251d-470a-a062-fa1922dfa9a8
  Handle 0035 : WRITE 
- LED Text
 ------------------------------------------
+ Scrolling Delay
  UUID : e95d0d2d-251d-470a-a062-fa1922dfa9a8
  Handle 0037 : READ WRITE 
- Scrolling Delay
 ------------------------------------------
 Button Service
  UUID : e95d9882-251d-470a-a062-fa1922dfa9a8
 ------------------------------------------
+ Button A State
  UUID : e95dda90-251d-470a-a062-fa1922dfa9a8
  Handle 003A : READ NOTIFY 
- Button A State
 ------------------------------------------
+ Button B State
  UUID : e95dda91-251d-470a-a062-fa1922dfa9a8
  Handle 003D : READ NOTIFY 
- Button B State
 ------------------------------------------
 IO Pin Service
  UUID : e95d127b-251d-470a-a062-fa1922dfa9a8
 ------------------------------------------
+ Pin AD Configuration
  UUID : e95d5899-251d-470a-a062-fa1922dfa9a8
  Handle 002E : READ WRITE 
- Pin AD Configuration
 ------------------------------------------
+ Pin I/O Configuration
  UUID : e95db9fe-251d-470a-a062-fa1922dfa9a8
  Handle 0030 : READ WRITE 
- Pin I/O Configuration
 ------------------------------------------
+ PWM Control
  UUID : e95dd822-251d-470a-a062-fa1922dfa9a8
  Handle 0032 : WRITE 
- PWM Control
 ------------------------------------------
+ Pin Data
  UUID : e95d8d00-251d-470a-a062-fa1922dfa9a8
  Handle 0034 : READ WRITE NOTIFY 
- Pin Data
 ------------------------------------------
 UART Service
  UUID : 6e400001-b5a3-f393-e0a9-e50e24dcca9e
 ------------------------------------------
+ UART RX Characteristic
  UUID : 6e400002-b5a3-f393-e0a9-e50e24dcca9e
  Handle 003F : INDICATE 
- UART RX Characteristic
 ------------------------------------------
+ UART TX Characteristic
  UUID : 6e400003-b5a3-f393-e0a9-e50e24dcca9e
  Handle 0042 : WRITE NO RESPONSE WRITE 
- UART TX Characteristic
 

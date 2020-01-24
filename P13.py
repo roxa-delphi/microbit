@@ -1,3 +1,9 @@
+#
+# Folo move to forward
+#   output to I/O P13
+#
+# Usages> python3 P13.py
+#
 
 from bluepy import btle
 import binascii
@@ -23,12 +29,15 @@ chPinAD.write(b"\x00\x20\x00")
 chPinIO  = svcPinIO.getCharacteristics(uuid_pin_io_conf)[0]
 chPinIO.write(b"\x00\x00\x00")
 
-#pin13 output to 256
+#pin13 output to 255
 chPin    = svcPinIO.getCharacteristics(uuid_pin_data)[0]
 #chPin.write(b"\x0d\xff")
 #chPin.write(b"\x0d\x80")
 chPin.write(b"\x0d\x50")
+
 time.sleep(2)
+
+#stop
 chPin.write(b"\x0d\x00")
 
 per.disconnect()

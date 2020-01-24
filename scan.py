@@ -1,3 +1,9 @@
+#
+# scan bluetooth device
+#
+# Usages> sudo python3 scan.py
+#
+
 import bluepy
 
 scanner = bluepy.btle.Scanner(0)

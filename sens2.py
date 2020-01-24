@@ -1,3 +1,8 @@
+#
+# dump micro:bit A and B button through bluetooth
+#
+# Usages> python3 sens2.py
+#
 
 from bluepy import btle
 import binascii
