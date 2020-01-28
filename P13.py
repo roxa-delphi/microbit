@@ -23,17 +23,17 @@ svcPinIO = per.getServiceByUUID(uuid_svc_iopin)
 
 #pin13 as Analog
 chPinAD  = svcPinIO.getCharacteristics(uuid_pin_ad_conf)[0]
-chPinAD.write(b"\x00\x20\x00")
+chPinAD.write(b"\x00\x20\x00\x00")
 
 #pin13 as Output
 chPinIO  = svcPinIO.getCharacteristics(uuid_pin_io_conf)[0]
-chPinIO.write(b"\x00\x00\x00")
+chPinIO.write(b"\x00\x00\x00\x00")
 
 #pin13 output to 255
 chPin    = svcPinIO.getCharacteristics(uuid_pin_data)[0]
-#chPin.write(b"\x0d\xff")
-#chPin.write(b"\x0d\x80")
-chPin.write(b"\x0d\x50")
+#chPin.write(b"\x0d\xff")	#255
+chPin.write(b"\x0d\x80")	#128
+#chPin.write(b"\x0d\x50")	# 80
 
 time.sleep(2)
 
