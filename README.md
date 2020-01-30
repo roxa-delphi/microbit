@@ -1,9 +1,9 @@
 Control and connect micro:bit and Programming Folo
 
--micro:bit  
+- micro:bit  
   [https://microbit.org/ja/](https://microbit.org/ja/)
 
--Programming Folo  
+- Programming Folo  
   [https://switch-education.com/products/5482/](https://switch-education.com/products/5482/)
 
 
