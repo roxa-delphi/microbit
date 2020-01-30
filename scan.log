@@ -1,0 +1,17 @@
+-----------------------------------
+address  : e4:1e:1f:1f:f4:49
+addrType : random
+RSSI     : -40
+Adv data :
+ (  1) Flags  : 06 
+ (  9) Complete Local Name  : BBC micro:bit [tazaz] 
+-----------------------------------
+address  : 2c:41:a1:cd:71:89
+addrType : public
+RSSI     : -45
+Adv data :
+ (  1) Flags  : 1a 
+ (  3) Complete 16b Services  : 0000febe-0000-1000-8000-00805f9b34fb 
+ (255) Manufacturer  : 1003400d0230 
+ ( 10) Tx Power  : 0a 
+ (  9) Complete Local Name  : LE-けっと 
