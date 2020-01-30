@@ -12,7 +12,7 @@ Control and connect micro:bit and Programming Folo
    % python3 scan.py
 ```
 
-2. get UUID for control through bluetooth
+2. get UUID for control through bluetooth  
    memo : getHandle.log
 ```
    % python3 getHandle.py xx:xx:xx:xx:xx
@@ -23,13 +23,13 @@ Control and connect micro:bit and Programming Folo
    % python3 writeLed2.py
 ```
 
-4. move forward Folo
-```
+4. move forward Folo  
    output "125" to P13 pin for move forward Folo
+```
    % python3 P13.py
 ```
    
-5. connect PS3 controller to Raspberry Pi 4
+5. connect PS3 controller to Raspberry Pi 4  
    memo : js_watch.log
 ```
    % python3 js_watch.py
