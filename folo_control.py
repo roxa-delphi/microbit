@@ -34,6 +34,12 @@ def main(chPin):
 
       # X button to end
       if ds3_num == 0 and ds3_type == 1:
+        #print(" move stop")
+        chPin.write(b"\x0d\x00")
+        chPin.write(b"\x0e\x00")
+        #print(" rotate stop")
+        chPin.write(b"\x0f\x00")
+        chPin.write(b"\x10\x00")
         per.disconnect()
         return
 
