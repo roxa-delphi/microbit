@@ -51,14 +51,13 @@ def main(chPin):
           chPin.write(b"\x0f\x00")
           chPin.write(b"\x10\x00")
         elif ds3_val > 0 :
-          val = round(ds3_val / 128)
-          if val > 255 : val=255
+          val = ds3_val>>7
           #print(" rotate right %d" %val)
           chPin.write(b"\x0f\x00")
           chPin.write(b"\x10" + val.to_bytes(1, 'little'))
         else :
-          val = - round(ds3_val / 128)
-          if val > 255 : val=255
+          ds3_val = -ds3_val
+          val = ds3_val>>7
           #print(" rotate left  %d" %val)
           chPin.write(b"\x10\x00")
           chPin.write(b"\x0f" + val.to_bytes(1, 'little'))
@@ -71,20 +70,19 @@ def main(chPin):
           chPin.write(b"\x0d\x00")
           chPin.write(b"\x0e\x00")
         elif ds3_val > 0 :
-          val = round(ds3_val / 128)
-          if val > 255 : val=255
+          val = ds3_val>>7
           #print(" move back    %d" %val)
           chPin.write(b"\x0d\x00")
           chPin.write(b"\x0e" + val.to_bytes(1, 'little'))
         else :
-          val = - round(ds3_val / 128)
-          if val > 255 : val=255
+          ds3_val = -ds3_val
+          val = ds3_val>>7
           #print(" move forward %d" %val)
           chPin.write(b"\x0e\x00")
           chPin.write(b"\x0d" + val.to_bytes(1, 'little'))
 
 
-      #time.sleep(0.2)
+      time.sleep(0.01)
       event = device.read(EVENT_SIZE)
 
 
