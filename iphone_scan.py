@@ -1,7 +1,3 @@
-#
-# Scan bluetooth device by Pythonista3 on iPhone
-#
-
 import cb
 import time
 

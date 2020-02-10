@@ -1,5 +1,7 @@
 #
-# Remote control Folo by Pythonista3 on iPhone
+# Remoto control the Programming Folo by Pythonista in iPhone
+#
+# used cb library
 #
 
 from scene import *
@@ -15,32 +17,32 @@ UUID_PIN_IO_CONF   = 'E95DB9FE-251D-470A-A062-FA1922DFA9A8'
 UUID_PIN_AD_CONF   = 'E95D5899-251D-470A-A062-FA1922DFA9A8'
 UUID_PIN_DATA      = 'E95D8D00-251D-470A-A062-FA1922DFA9A8'
 
-delegate = None
+delegate     = None
 label_status = None
 is_connected = False
 
-class Game (Scene):
+class Folo_Control (Scene):
 	def setup(self):
 		global label_status
 		global is_connected
 		
 		self.background_color = '#e0e0e0'
 		
-		label_status = LabelNode('Status', position=self.size/2.0, parent=self, color='black')
+		label_status = LabelNode('Status', position=(180,600), parent=self, color='black')
 		
-		self.follow_button = SpriteNode('iob:arrow_up_a_32', position=(200,200))
+		self.follow_button = SpriteNode('iob:arrow_up_a_256', position=(185,450))
 		self.add_child(self.follow_button)
 		
-		self.back_button   = SpriteNode('iob:arrow_down_a_32', position=(200,150))
+		self.back_button   = SpriteNode('iob:arrow_down_a_256', position=(185,110))
 		self.add_child(self.back_button)
 		
-		self.right_button  = SpriteNode('iob:arrow_return_right_32', position=(250,180))
+		self.right_button  = SpriteNode('iob:arrow_return_right_256', position=(285,300))
 		self.add_child(self.right_button)
 		
-		self.left_button   = SpriteNode('iob:arrow_return_left_32', position=(150,180))
+		self.left_button   = SpriteNode('iob:arrow_return_left_256', position=(90,300))
 		self.add_child(self.left_button)
 		
-		self.connect_button = SpriteNode('iob:bluetooth_32', position=(100,400))
+		self.connect_button = SpriteNode('iob:bluetooth_32', position=(50,600))
 		self.add_child(self.connect_button)
 		
 		self.current_button = None
@@ -54,24 +56,28 @@ class Game (Scene):
 		
 		touch_loc = self.point_from_scene(touch.location)
 		if is_connected and touch_loc in self.follow_button.frame:
+			# move forward
 			self.current_button = self.follow_button
 			self.current_button_name = 'follow'
 			label_status.text = 'follow'
 			delegate.send_action(1, 0)
 			
 		elif is_connected and touch_loc in self.back_button.frame:
+			# move back
 			self.current_button = self.back_button
 			self.current_button_name = 'back'
 			label_status.text = 'back'
 			delegate.send_action(-1, 0)
 			
 		elif is_connected and touch_loc in self.right_button.frame:
+			# turn right
 			self.current_button = self.right_button
 			self.current_button_name = 'right'
 			label_status.text = 'right'
 			delegate.send_action(0, 1)
 			
 		elif is_connected and touch_loc in self.left_button.frame:
+			# turn left
 			self.current_button = self.left_button
 			self.current_button_name = 'left'
 			label_status.text = 'left'
@@ -88,7 +94,7 @@ class Game (Scene):
 		global is_connected
 		
 		touch_loc = self.point_from_scene(touch.location)
-		if touch_loc in self.connect_button.frame:
+		if self.current_button == self.connect_button and touch_loc in self.connect_button.frame:
 			if is_connected :
 				# disconnection
 				delegate.send_action(0, 0)
@@ -103,20 +109,11 @@ class Game (Scene):
 				cb.set_central_delegate(delegate)
 				cb.scan_for_peripherals()
 		
-		elif is_connected and touch_loc in self.follow_button.frame:
-			delegate.send_action(0, 0)
-			label_status.text == ''
-		elif is_connected and touch_loc in self.back_button.frame:
-			delegate.send_action(0, 0)
-			label_status.text == ''
-		elif is_connected and touch_loc in self.left_button.frame:
-			delegate.send_action(0, 0)
-			label_status.text == ''
-		elif is_connected and touch_loc in self.right_button.frame:
-			delegate.send_action(0, 0)
-			label_status.text == ''
 		else :
-			label_status.text = ''
+			if is_connected :
+				# release button
+				delegate.send_action(0, 0)
+				label_status.text == ''
 				
 class MyCentralManagerDelegate (object):
 	def __init__(self):
@@ -226,5 +223,5 @@ class MyCentralManagerDelegate (object):
 				self.peripheral.write_characteristic_value(self.chara_io, b'\x0f\xff', True)
 
 if __name__ == '__main__':
-	run(Game(), PORTRAIT, show_fps=True)
+	run(Folo_Control(), PORTRAIT, show_fps=True)
 
